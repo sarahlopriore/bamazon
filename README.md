@@ -23,3 +23,16 @@ That's all the functionality for the customer file, moving on the the manager fi
 The manager file first displays a select list of options: "View Products for Sale", "View Low Inventory", "Add to Inventory", and "Add New Product":
 
 ![manager first options](images/manager_main.png)
+
+When you select the first option "View Products for Sale", the table of products for sale is displayed.
+
+![manager view products](images/manager_view.png)
+
+When you select the second option "View Low Inventory", the table of products with less than 5 stock quantity is displayed.
+
+![manager view low inventory](images/manager_viewlow.png)
+
+
+When selecing the option, "Add to Inventory", you are prompted with a list of items to add inventory to.
+
+![manager add to inventory option](images/manager_addMore.png)
