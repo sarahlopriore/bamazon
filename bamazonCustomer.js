@@ -79,7 +79,7 @@ var showTotal = function(it, q) {
     connection.query("SELECT stock_quantity, price FROM products WHERE item_id = ?", [it], function(err, res) {
         if (err) throw err;
         console.log(res[0].price);
-        console.log("Total: " + res[0].price * q);
+        console.log("Total: $" + res[0].price * q);
     })
 
     connection.end();
