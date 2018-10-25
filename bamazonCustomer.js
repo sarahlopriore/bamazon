@@ -46,8 +46,8 @@ var startApp = function() {
             if (err) throw err;
             if (res[0].stock_quantity < answers.numberChoice) {
                 console.log("Insufficient quantity!")
+                connection.end();
             } else {
-                console.log(res);
                 var difference = res[0].stock_quantity - answers.numberChoice;
                 var userQ = answers.numberChoice;
                 buyItems(difference, item);
@@ -78,7 +78,6 @@ var buyItems = function(diff, it) {
 var showTotal = function(it, q) {
     connection.query("SELECT stock_quantity, price FROM products WHERE item_id = ?", [it], function(err, res) {
         if (err) throw err;
-        console.log(res[0].price);
         console.log("Total: $" + res[0].price * q);
     })
 

@@ -80,8 +80,6 @@ var addMore = function() {
             if (err) throw err;
             var newQ = Number(res[0].stock_quantity) + Number(answers.quantity)
             var itemId = answers.itemId
-            console.log(res)
-            console.log(itemId + " q: " + newQ);
             addMoreItem(newQ, itemId);
         })
     })
