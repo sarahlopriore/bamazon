@@ -64,8 +64,9 @@ var viewLow = function() {
 var addMore = function() {
     inquirer.prompt([
         {
-            type: "input",
+            type: "list",
             message: "What is the id of the item you are adding?",
+            choices: ["KS11", "KS22", "KS33", "HG11", "HG22", "ET11", "ET22", "CS11", "OS11", "OS22"],
             name: "itemId"
         },
         {
@@ -75,12 +76,38 @@ var addMore = function() {
         }
     ])
     .then(function(answers) {
-        connection.query("SELECT")
+        connection.query("SELECT item_id, stock_quantity FROM products WHERE item_id = ?", [answers.itemId], function(err, res) {
+            if (err) throw err;
+            var newQ = Number(res[0].stock_quantity) + Number(answers.quantity)
+            var itemId = answers.itemId
+            console.log(res)
+            console.log(itemId + " q: " + newQ);
+            addMoreItem(newQ, itemId);
+        })
     })
 }
 
 
-addNew = function() {
+var addMoreItem = function(q, id) {
+    connection.query("UPDATE products SET ? WHERE ?", 
+    [
+        {
+            stock_quantity: q
+        },
+        {
+            item_id: id
+        }
+    ],
+    function(err, res) {
+        if (err) throw err;
+        console.log("Stock added successfully to selected product.")
+    })
+
+    connection.end();
+}
+
+
+var addNew = function() {
     inquirer.prompt([
         {
             type: "input",
