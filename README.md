@@ -32,7 +32,18 @@ When you select the second option "View Low Inventory", the table of products wi
 
 ![manager view low inventory](images/manager_viewlow.png)
 
-
 When selecing the option, "Add to Inventory", you are prompted with a list of items to add inventory to.
 
 ![manager add to inventory option](images/manager_addMore.png)
+
+Then the user is prompted for the quantity they would like to add and the stock is then added to inventory.
+
+![manager add to inventory option 2](images/manager_addMore2.png)
+
+![manager add to inventory results](images/manager_addMore_results.png)
+
+When you select "Add New Item", you are prompted with a series of questions about the new product that you are adding.
+
+![manager add new item](images/manager_addnew.png)
+
+![manager add new item results](images/manager_addnew_results.png)
